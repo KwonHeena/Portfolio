@@ -314,6 +314,9 @@ section:not(.section02) .section_inner{
   .career_wrap ul li{
     font-size: 16px;
   }
+  .skill_wrap{
+    gap: 15px 20px;
+  }
   .skill_wrap .box p {
     font-size: 12px;
   }
