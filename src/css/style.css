@@ -1,7 +1,4 @@
 /* 공통 */
-#container{
-  overflow: hidden;
-}
 .section_inner{
   max-width: 1500px;
   width: calc(100% - 40px);
