@@ -180,6 +180,9 @@ section:not(.section02) .section_inner{
 }
 
 @media screen and (max-width: 768px){
+  .section01 .section_inner{
+    height: 100%;
+  }
   .section01 .txt_box {
     min-height: 267.5px;
   }
