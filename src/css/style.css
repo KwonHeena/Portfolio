@@ -1,4 +1,7 @@
 /* 공통 */
+#container{
+  overflow: hidden;
+}
 .section_inner{
   max-width: 1500px;
   width: calc(100% - 40px);
@@ -257,15 +260,12 @@ section:not(.section02) .section_inner{
   background-image: url(../img/ico_css.png);
 }
 .skill_wrap .box:nth-of-type(3) p{
-  background-image: url(../img/ico_photoshop.png);
+  background-image: url(../img/ico_psd.png);
 }
 .skill_wrap .box:nth-of-type(4) p{
-  background-image: url(../img/ico_script.png);
+  background-image: url(../img/ico_js.png);
 }
 .skill_wrap .box:nth-of-type(5) p{
-  background-image: url(../img/ico_jquery.png);
-}
-.skill_wrap .box:nth-of-type(6) p{
   background-image: url(../img/ico_mark.png);
 }
 
