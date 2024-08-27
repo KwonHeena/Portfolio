@@ -1,9 +1,14 @@
 $(document).ready(function() {
-  var target = $('.section02').offset().top;
-  var scroll = $(window).scrollTop();
-  if(scroll == target){
-    $('.section02').addClass('on');
-  }else{
-    $('.section02').removeClass('on');
-  }
+  AOS.init({});
+
+  $(window).on('scroll', function(){
+    var target = $('.section03').offset().top;
+    var scroll = $(window).scrollTop();
+    if(scroll > target){
+      $('.section03').addClass('on');
+    }else{
+      $('.section03').removeClass('on');
+    }
+  });
+
 });
