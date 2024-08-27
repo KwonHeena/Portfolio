@@ -221,7 +221,7 @@ section:not(.section02) .section_inner{
 
 /* section02 */
 .section02 .section_inner{
-  justify-content: center;
+  padding-bottom: 40px;
 }
 .intro_wrap .intro_box{
   display: flex;
@@ -291,6 +291,9 @@ section:not(.section02) .section_inner{
 }
 
 @media screen and (max-width: 768px){
+  .section02 .section_inner{
+    padding-bottom: 20px;
+  }
   .intro_wrap .intro_box {
     flex-direction: column;
     align-items: center;
