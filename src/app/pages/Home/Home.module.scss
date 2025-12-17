@@ -1,0 +1,263 @@
+@use '../../styles/var' as *;
+
+.section01{
+  background: #016A4D;
+  font-family: 'Paperlogy';
+  & > div{
+    height: 100%;
+  }
+  .home_wrap{
+    padding: 70px 90px 100px; 
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    height: 100%;
+    .lf_wrap{
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 1px;
+        background-color: #fff;
+        right: 0;
+        top: -70px;
+        animation: bd01 0.7s 0.2s alternate forwards;
+        }
+        @keyframes bd01 {
+          0%{
+            height: 0;
+          }
+          100%{
+            height: calc(100% + 170px);
+          }
+        }
+      .name{
+        display: inline-block;
+        font-weight: 600;
+        font-size: 35px;
+        opacity: 0;
+        transform: scale(0.8);
+        animation: name 0.5s 0.3s forwards;
+        width: 252px;
+        @keyframes name {
+          0%{
+             opacity: 0;
+             transform: scale(0.8);
+          }
+          100%{
+             opacity: 1;
+             transform: scale(1);
+          }
+        }
+      }
+      .text{
+        font-size: 250px;
+        font-weight: 600;
+        line-height: inherit;
+        line-height: 1;
+        span{
+          display: block;
+          letter-spacing: 0.02em;
+          position: relative;
+          overflow: hidden;
+          &:nth-of-type(2)::before{
+            content: '';
+            display: inline-block;
+            width: 80px;
+            height: 35px;
+            background: transparent;
+            vertical-align: middle;
+            margin-right: 20px;
+          }
+          &:nth-of-type(2)::after{
+            content: '';
+            width: 80px;
+            height: 35px;
+            opacity: 0;
+            transition: 0.4s;
+            transition-delay: 0.7s;
+            background: $mainColor;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: bar 0.7s 0.5s alternate forwards;
+          }
+          @keyframes bar {
+            0%{
+              opacity: 0;
+              width: 0;
+            }
+            100%{
+              opacity: 1;
+              width: 80px;
+            }
+          }
+          i{
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%) scale(0);
+            animation: txt 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+          }
+          @keyframes txt {
+            0%{
+              opacity: 0;
+              transform: translateY(100%) scale(0);
+            }
+            100%{
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+        }
+      }
+    }
+    .rt_wrap{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding-left: 70px;
+      .top_box{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          height: 1px;
+          background: #fff;
+          bottom: 0;
+          right: -90px;
+          animation: bd02 0.7s 0.4s alternate forwards;
+        }
+        @keyframes bd02 {
+          0%{
+            width: 0;
+          }
+          100%{
+            width: calc(100% + 350px);
+          }
+        }
+        &::before{
+          content: '';
+          height: 30px;
+          background: $mainColor;
+          position: absolute;
+          bottom: 0px;
+          left: -70px;
+          opacity: 0;
+          animation: box 0.5s 0.7s alternate forwards;
+        }
+        @keyframes box {
+          0%{
+            width: 0;
+            opacity: 0;
+          }
+          100%{
+            width: 30px;
+            opacity: 1;
+          }
+        }
+        .year{
+          font-size: 34px;
+          font-weight: 600;
+          opacity: 0;
+          animation: year 0.5s 0.6s forwards;
+          @keyframes year {
+            0%{
+              opacity: 0;
+            }
+            100%{
+              opacity: 1;
+            }
+          }
+        }
+        .job{
+          display: flex;
+          gap: 30%;
+          font-size: 40px;
+          p{
+           opacity: 0;
+            animation: job 0.5s 0.8s forwards;
+            @keyframes job {
+              0%{
+                opacity: 0;
+              }
+              100%{
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      .bt_box{
+        flex: 1;
+        position: relative;
+        .scroll{
+            display: block;
+            position: absolute;
+            z-index: 101;
+            transform: translateX(-50%);
+            left: 0;
+            bottom: -50px;
+            z-index: 11;
+            text-align: center;
+            font-size: 14px;
+            .mouse {
+              position: relative;
+              display: block;
+              width: 30px;
+              height: 45px;
+              border: 2px solid #fff;
+              border-radius: 23px;
+              margin: 0 auto;
+              span{
+                position: absolute;
+                display: block;
+                top: 30%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 6px;
+                height: 6px;
+                background: #fff;
+                border-radius: 50%;
+                animation: mouse 2s linear infinite;
+              }
+            }
+            p{
+              font-size: 22px;
+              color: #fff;
+              text-align: center;
+              margin-top: 10px;
+            }
+          }
+          @keyframes mouse {
+            0% {
+              opacity: 1;
+              top: 29%;
+            }
+            25% {
+              opacity: 1;
+              top: 50%;
+            }
+            50% {
+              opacity: 0;
+              top: 70%;
+            }
+            100% {
+              opacity: 0;
+              top: 29%;
+            }
+          }
+        }
+      }
+    }
+  }
