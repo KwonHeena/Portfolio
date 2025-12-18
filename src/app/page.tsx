@@ -4,7 +4,7 @@ import Home from './pages/Home/Home'
 import Intro from './pages/Intro/Intro'
 
 const page = () => {
- const introRef = useRef<HTMLDivElement | null>(null)
+ const introRef = useRef<HTMLDivElement>(null)
 
 //  HOME -> Intro 스크롤
   const scrollIntro = () => {

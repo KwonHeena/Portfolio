@@ -7,7 +7,7 @@ import { FaQuoteRight } from "react-icons/fa6";
 import { GoLinkExternal } from "react-icons/go";
 
 type Props = {
-  introRef: React.RefObject<HTMLDivElement>
+  introRef: React.RefObject<HTMLDivElement | null>
 }
 
 const Intro = ({introRef} : Props) => {
