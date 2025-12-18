@@ -4,7 +4,7 @@ import styles from './Intro.module.scss'
 import useInterSection from '@/app/hooks/useInterSection'
 
 type Props = {
-  introRef: React.RefObject<HTMLDivElement | null>
+  introRef: React.RefObject<HTMLDivElement>
 }
 
 const Intro = ({introRef} : Props) => {
