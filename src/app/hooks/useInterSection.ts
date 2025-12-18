@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 
 const useInterSection = <T extends HTMLElement>(
-  externalRef?: React.RefObject<T>
+  externalRef?: React.RefObject<T | null>
 ) => {
   const innerRef = useRef<T | null>(null)
   const ref = externalRef ?? innerRef
