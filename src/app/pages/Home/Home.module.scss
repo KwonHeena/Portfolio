@@ -1,7 +1,7 @@
 @use '../../styles/var' as *;
 
 .section01{
-  background: #016A4D;
+  background: $mainColor;
   font-family: 'Paperlogy';
   & > div{
     height: 100%;
@@ -26,7 +26,7 @@
         background-color: #fff;
         right: 0;
         top: -70px;
-        animation: bd01 0.7s 0.2s alternate forwards;
+        animation: bd01 1.5s 0.3s alternate forwards;
         }
         @keyframes bd01 {
           0%{
@@ -42,7 +42,7 @@
         font-size: 35px;
         opacity: 0;
         transform: scale(0.8);
-        animation: name 0.5s 0.3s forwards;
+        animation: name 1s 0.5s forwards;
         width: 252px;
         @keyframes name {
           0%{
@@ -81,12 +81,12 @@
             opacity: 0;
             transition: 0.4s;
             transition-delay: 0.7s;
-            background: $mainColor;
+            background: $pointColor;
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            animation: bar 0.7s 0.5s alternate forwards;
+            animation: bar 1s 0.5s alternate forwards;
           }
           @keyframes bar {
             0%{
@@ -102,7 +102,7 @@
             display: inline-block;
             opacity: 0;
             transform: translateY(100%) scale(0);
-            animation: txt 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+            animation: txt 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
           }
           @keyframes txt {
             0%{
@@ -136,7 +136,7 @@
           background: #fff;
           bottom: 0;
           right: -90px;
-          animation: bd02 0.7s 0.4s alternate forwards;
+          animation: bd02 1.2s 0.5s alternate forwards;
         }
         @keyframes bd02 {
           0%{
@@ -149,12 +149,12 @@
         &::before{
           content: '';
           height: 30px;
-          background: $mainColor;
+          background: $pointColor;
           position: absolute;
           bottom: 0px;
           left: -70px;
           opacity: 0;
-          animation: box 0.5s 0.7s alternate forwards;
+          animation: box 0.5s 1s alternate forwards;
         }
         @keyframes box {
           0%{
@@ -170,7 +170,7 @@
           font-size: 34px;
           font-weight: 600;
           opacity: 0;
-          animation: year 0.5s 0.6s forwards;
+          animation: year 0.5s 0.8s forwards;
           @keyframes year {
             0%{
               opacity: 0;
@@ -186,13 +186,16 @@
           font-size: 40px;
           p{
            opacity: 0;
-            animation: job 0.5s 0.8s forwards;
+            animation: job 0.5s 1.2s forwards;
+            transform: translateY(70px);
             @keyframes job {
               0%{
                 opacity: 0;
+                transform: translateY(70px);
               }
               100%{
                 opacity: 1;
+                transform: translateY(0px);
               }
             }
           }
