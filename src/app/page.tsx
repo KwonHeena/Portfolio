@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio/Portfolio'
 
 const page = () => {
  const introRef = useRef<HTMLDivElement>(null)
+ const portRef = useRef<HTMLDivElement>(null)
 
 //  HOME -> Intro 스크롤
   const scrollIntro = () => {
@@ -20,7 +21,7 @@ const page = () => {
     <main>
       <Home btnClick={scrollIntro} />
       <Intro introRef={introRef} />
-      <Portfolio />
+      <Portfolio portRef={portRef} />
     </main>
   )
 }

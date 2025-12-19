@@ -4,7 +4,6 @@ import styles from './Intro.module.scss'
 import useInterSection from '@/app/hooks/useInterSection'
 import { FaQuoteLeft } from "react-icons/fa6";
 import { FaQuoteRight } from "react-icons/fa6";
-import { GoLinkExternal } from "react-icons/go";
 
 type Props = {
   introRef: React.RefObject<HTMLDivElement | null>
