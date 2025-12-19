@@ -14,8 +14,8 @@ const Intro = ({introRef} : Props) => {
   const { ref, isOn } = useInterSection<HTMLDivElement>(introRef)
   const title = '프론트엔드 개발자'
 
-  // 기술 리스트
-  const icons = ['html', 'css', 'javaScript', 'Sass', 'Tailwind', 'React', 'Vite', 'Next', 'TypeScript', 'netlify', 'Vercel', 'GitHub', 'Notion', 'Photoshop', 'Figma']
+  // 스킬 리스트 로고 :: 이미지명이랑 동일하게 넣으면 자동으로 등록됨
+  const icons = ['html', 'css', 'javaScript', 'Sass', 'Tailwind', 'React', 'Vite', 'Next', 'TypeScript', 'GCP', 'netlify', 'Vercel', 'GitHub', 'Notion', 'Photoshop', 'Figma']
 
   return (
     <section ref={ref} className={`${styles.section02} ${isOn ? styles.on : ''}`}>
@@ -27,7 +27,7 @@ const Intro = ({introRef} : Props) => {
               <p className={styles.birth}>94.01.24</p>
             </div>
             <div className={styles.intro_box}>
-              <p className={styles.intro_tit}>디자인과 기능 사이를 잇는, <FaQuoteLeft className={styles.icon} /> {title.split('').map((t) => (<span>{t}</span>))} <FaQuoteRight className={styles.icon} /> 입니다.</p>
+              <p className={styles.intro_tit}>디자인과 기능 사이를 잇는, <FaQuoteLeft className={styles.icon} /> {title.split('').map((t, idx) => (<span style={{animationDelay: `${idx * 0.04}s`}} className={styles.slice_text}>{t}</span>))} <FaQuoteRight className={styles.icon} /> 입니다.</p>
               <p className={styles.intro_sub}>4년간 퍼블리싱으로 디자인을 구현해 왔고, 현재는 그 경험을 바탕으로 기능과 사용자 경험을 연결하는 프론트엔드 개발자로 도전하고 있습니다.<br />
                 디자인과 기능 사이를 부지런히 오가는 <strong>꿀벌 같은 개발자</strong>가 되고자 합니다.</p>
             </div>
@@ -59,13 +59,13 @@ const Intro = ({introRef} : Props) => {
                   <div className={styles.cont}>
                     <p className={styles.t}>경력</p>
                     <ul className={styles.career}>
-                      <li>아이티굿 2021.04 ~ 2025.06 <span className={styles.period}>(4년 2개월)</span></li>
+                      <li><span className={styles.text}>아이티굿</span>웹사이트 퍼블리싱<span className={styles.period}>2021.04 ~ 2025.06</span></li>
                     </ul>
                   </div>
                   <div className={styles.cont}>
                     <p className={styles.t}>교육</p>
                     <ul className={styles.career}>
-                      <li>(K-DIGITAL)기업요구 생성형 AI를 활용한 개발자 양성 과정<span className={styles.period}>2025.07 ~ 2026.01</span></li>
+                      <li>(K-DIGITAL)기업요구 생성형 AI를 활용한 개발자 양성 과정<span className={styles.period}><span className={styles.text}>라인컴퓨터아트학원</span> 2025.07 ~ 2026.01</span></li>
                     </ul>
                   </div>
                   

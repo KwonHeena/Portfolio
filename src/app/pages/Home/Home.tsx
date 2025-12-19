@@ -1,6 +1,8 @@
 'use client'
-import React, {forwardRef} from 'react'
+import React from 'react'
 import styles from './Home.module.scss'
+import Link from 'next/link'
+
 
 type btn = {
   btnClick : () => void
@@ -28,8 +30,8 @@ const Home = ({btnClick} : btn) => {
             <div className={styles.top_box}>
               <p className={styles.year}>2026</p>
               <div className={styles.job}>
-                <p>Frontend</p>
-                <p>Publisher</p>
+                <button>Frontend</button>
+                <button>Publisher</button>
               </div>
             </div>
             <div className={styles.bt_box}>
@@ -37,7 +39,7 @@ const Home = ({btnClick} : btn) => {
                 <span className={styles.mouse}>
                   <span></span>
                 </span>
-                <p>click</p>
+                <p>Scroll</p>
               </button>
             </div>
           </div>

@@ -1,8 +1,10 @@
 @use '../../styles/var' as *;
 
 .section02{
-  transition: 0.3s;
   background: #FFFFF6;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   .section_inner{
     max-width: 1400px;
     width: calc(100% - 40px);
@@ -12,8 +14,12 @@
       .name_wrap{
         color: $mainColor;
         strong{
+          display: block;
           font-size: 45px;
           font-weight: 600;
+          transform: translateY(-40px);
+          opacity: 0;
+          transition: all 0.6s;
         }
         .birth{
           font-size: 25px;
@@ -55,7 +61,6 @@
           }
         }
       }
-      
       .md_box{
         display: flex;
         .img_wrap{
@@ -91,10 +96,20 @@
               display: inline-block;
               min-width: 70px;
             }
-            .career .period{
-              display: block;
-              font-size: 15px;
-              margin-top: 3px;
+            .career{
+              .period{
+               display: block;
+               font-size: 15px;
+               margin-top: 3px;
+             }
+             .text::after{
+              content: "";
+              background: #016a4d;
+              width: 1px;
+              height: 13px;
+              display: inline-block;
+              margin: 0 6px -1px 7px;
+             }
             }
             .skill_list{
               display: grid;
@@ -145,13 +160,33 @@
       }
     }
   }
-
-
-
-
-
   &.on{
-    // opacity: 1;
-  }
+    .section_inner{
+      .name_wrap strong{
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .slice_text{
+        display: inline-block;
+        animation: bounce 1.2s 2.5s ease-out forwards;
+      }
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+  
+        40% {
+          transform: translateY(-12px);
+          opacity: 1;
+        }
+  
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+    }
 
 }

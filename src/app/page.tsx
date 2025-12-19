@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Home from './pages/Home/Home'
 import Intro from './pages/Intro/Intro'
+import Portfolio from './pages/Portfolio/Portfolio'
 
 const page = () => {
  const introRef = useRef<HTMLDivElement>(null)
@@ -19,6 +20,7 @@ const page = () => {
     <main>
       <Home btnClick={scrollIntro} />
       <Intro introRef={introRef} />
+      <Portfolio />
     </main>
   )
 }

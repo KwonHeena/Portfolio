@@ -18,7 +18,7 @@ const useInterSection = <T extends HTMLElement>(
           observer.disconnect()
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     )
 
     observer.observe(ref.current)
