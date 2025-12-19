@@ -1,7 +1,9 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
 import 'swiper/css';
+import 'swiper/css/pagination'
 import styles from './Portfolio.module.scss'
 import useInterSection from '@/app/hooks/useInterSection';
 
@@ -11,12 +13,19 @@ type Props = {
 
 const Portfolio = ({portRef} : Props) => {
   const { ref, isOn } = useInterSection<HTMLDivElement>(portRef)
+  const paginationRef = useRef<HTMLDivElement | null>(null)
   return (
-    <section ref={ref} className={`${styles.section03} ${isOn ? styles.on : ''}`}>
+    <section className={styles.section03}>
       <div className={styles.section_inner}>
-        <p className={styles.title} style={{fontSize: 50}}>Publishing</p>
+        <p className={styles.title} style={{fontSize: 45, lineHeight: 1}}>Publishing</p>
         <div className={styles.slide_wrap}>
           <Swiper
+            modules={[Pagination]}
+            pagination={{
+              el : paginationRef.current,
+              clickable : true
+            }}
+
             slidesPerView={2.5}
             centeredSlides={true}
             spaceBetween={30}
@@ -188,6 +197,7 @@ const Portfolio = ({portRef} : Props) => {
           </SwiperSlide>
 
         </Swiper>
+        <div ref={paginationRef} className={styles.custom_dots}> </div>
         </div>
       </div>
     </section>

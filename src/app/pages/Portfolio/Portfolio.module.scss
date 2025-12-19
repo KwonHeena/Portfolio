@@ -8,23 +8,28 @@
   .section_inner{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    padding: 100px 0;
+    padding: 80px 0 60px;
     height: 100%;
+    .title{
+      font-size: 45px;
+      line-height: 1;
+      font-weight: 600;
+      max-width: 1400px;
+      width: calc(100% - 40px);
+      margin: 0 auto 30px;
+      color: $mainColor;
+    }
   }
   .slide_wrap{
     width: 100%;
     .inner{
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-      justify-content: center;
       display: inline-block;
       .img{
-        max-width: 750px;
+        max-width: 700px;
         border-radius: 10px;
         overflow: hidden;
         position: relative;
+        box-shadow: 5px 8px 15px rgba(0,0,0,0.2);
         .mark{
           position: absolute;
           top: 20px;
@@ -39,20 +44,33 @@
         gap: 10px; 
         }
         .t{
-            font-size: 40px;
+            font-size: 30px;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
           }
       }
       .site_list{
-        font-size: 20px;
+        font-size: 19px;
         & + .site_list{
-          margin-top: 10px;
+          margin-top: 5px;
         }
         .tit{
-          min-width: 95px;
+          min-width: 92px;
         }
       }
+    }
+  }
+  .custom_dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 35px;
+    span{
+      background: $mainColor;
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
     }
   }
 }

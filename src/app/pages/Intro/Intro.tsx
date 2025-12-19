@@ -26,7 +26,7 @@ const Intro = ({introRef} : Props) => {
               <p className={styles.birth}>94.01.24</p>
             </div>
             <div className={styles.intro_box}>
-              <p className={styles.intro_tit}>디자인과 기능 사이를 잇는, <FaQuoteLeft className={styles.icon} /> {title.split('').map((t, idx) => (<span style={{animationDelay: `${idx * 0.04}s`}} className={styles.slice_text}>{t}</span>))} <FaQuoteRight className={styles.icon} /> 입니다.</p>
+              <p className={styles.intro_tit}>디자인과 기능 사이를 잇는, <FaQuoteLeft className={styles.icon} /> {title.split('').map((t, idx) => (<span key={idx} style={{animationDelay: `${idx * 0.04}s`}} className={styles.slice_text}>{t}</span>))} <FaQuoteRight className={styles.icon} /> 입니다.</p>
               <p className={styles.intro_sub}>4년간 퍼블리싱으로 디자인을 구현해 왔고, 현재는 그 경험을 바탕으로 기능과 사용자 경험을 연결하는 프론트엔드 개발자로 도전하고 있습니다.<br />
                 디자인과 기능 사이를 부지런히 오가는 <strong>꿀벌 같은 개발자</strong>가 되고자 합니다.</p>
             </div>
