@@ -192,6 +192,10 @@ const Portfolio = ({portRef} : Props) => {
                   <p className={styles.tit}>작업기간 : </p>
                   <p className={styles.name}>2023.01 ~ 2023.03</p>
                 </div>
+                <div className={styles.site_list}>
+                  <p className={styles.tit}>기여도 : </p>
+                  <p className={styles.name}>퍼블리싱 100%</p>
+                </div>
               </div>
             </a>
           </SwiperSlide>

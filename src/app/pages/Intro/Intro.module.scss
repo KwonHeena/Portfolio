@@ -17,9 +17,10 @@
           display: block;
           font-size: 45px;
           font-weight: 600;
-          transform: translateY(-40px);
+          transform: translateY(-20px);
           opacity: 0;
-          transition: all 0.6s;
+          transition: all 0.7s;
+          transition-delay: 0.3s;
         }
         .birth{
           font-size: 25px;
@@ -167,19 +168,27 @@
         opacity: 1;
       }
       .slice_text{
+        opacity: 0;
+        transform: translateY(10px);
         display: inline-block;
-        animation: bounce 1.2s 2.5s ease-out forwards;
+        animation: bounce 1.5s 3s ease forwards;
       }
       @keyframes bounce {
         0% {
-          transform: translateY(0);
+          transform: translateY(10px);
+          opacity: 0;
+        }
+
+        25% {
+          transform: translateY(-10px);
           opacity: 0;
         }
   
-        40% {
-          transform: translateY(-12px);
+        50% {
+          transform: translateY(-20px);
           opacity: 1;
         }
+
   
         100% {
           transform: translateY(0);
