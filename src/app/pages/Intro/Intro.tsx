@@ -14,7 +14,7 @@ const Intro = ({introRef} : Props) => {
   const title = '프론트엔드 개발자'
 
   // 스킬 리스트 로고 :: 이미지명이랑 동일하게 넣으면 자동으로 등록됨
-  const icons = ['html', 'css', 'javaScript', 'Sass', 'Tailwind', 'React', 'Vite', 'Next', 'TypeScript', 'GCP', 'netlify', 'Vercel', 'GitHub', 'Notion', 'Photoshop', 'Figma']
+  const icons = ['html', 'css', 'javaScript', 'Sass', 'Tailwind', 'React', 'Vite', 'Next', 'TypeScript', 'GCP', 'netlify', 'Vercel', 'GitHub', 'Notion', 'Photoshop', 'Figma', 'node']
 
   return (
     <section ref={ref} className={`${styles.section02} ${isOn ? styles.on : ''}`}>

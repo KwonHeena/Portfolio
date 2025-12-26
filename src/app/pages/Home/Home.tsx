@@ -30,8 +30,8 @@ const Home = ({btnClick} : btn) => {
             <div className={styles.top_box}>
               <p className={styles.year}>2026</p>
               <div className={styles.job}>
-                <button>Frontend</button>
-                <button>Publisher</button>
+                <span>Frontend</span>
+                <span>Publisher</span>
               </div>
             </div>
             <div className={styles.bt_box}>

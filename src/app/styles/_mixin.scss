@@ -1,0 +1,36 @@
+@import './var';
+
+// 1500
+@mixin breakB {
+  @media (max-width: #{$breakpoint-b}) {
+    @content;
+  }
+}
+
+// 1200
+@mixin breakM {
+  @media (max-width: #{$breakpoint-m}) {
+    @content;
+  }
+}
+
+// 1024
+@mixin tablet {
+  @media (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+// 768
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+// 460
+@mixin phone {
+  @media (max-width: #{$breakpoint-phone}) {
+    @content;
+  }
+}

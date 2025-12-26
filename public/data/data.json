@@ -1,0 +1,22 @@
+[
+  {
+    "title": "프로젝트 1",
+    "desc": "내용 1",
+    "img": "/images/pro01.jpg"
+  },
+  {
+    "title": "프로젝트 2",
+    "desc": "내용 2",
+    "img": "/images/pro02.jpg"
+  },
+  {
+    "title": "프로젝트 3",
+    "desc": "내용 3",
+    "img": "/images/pro03.jpg"
+  },
+  {
+    "title": "프로젝트 4",
+    "desc": "내용 4",
+    "img": "/images/pro04.jpg"
+  }
+]

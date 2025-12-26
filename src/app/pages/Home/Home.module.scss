@@ -1,3 +1,4 @@
+@use '../../styles/mixin' as m;
 @use '../../styles/var' as *;
 
 .section01{
@@ -6,12 +7,23 @@
   & > div{
     height: 100%;
   }
+  // @include m.tablet{
+  //   height: auto;
+  // }
   .home_wrap{
     padding: 70px 90px 100px; 
     display: flex;
     justify-content: center;
     color: #fff;
     height: 100%;
+    @include m.breakB{
+      padding: 50px 50px 60px;
+    }
+    @include m.tablet{
+      gap: 80px;
+      padding: 30px 40px 40px;
+      flex-direction: column;
+    }
     .lf_wrap{
       flex: 1.5;
       display: flex;
@@ -33,8 +45,11 @@
             height: 0;
           }
           100%{
-            height: calc(100% + 170px);
+            height: 110vh;
           }
+        }
+        @include m.tablet{
+          gap: 60px;
         }
       .name{
         display: inline-block;
@@ -44,6 +59,13 @@
         transform: scale(0.8);
         animation: name 1s 0.5s forwards;
         width: 252px;
+        @include m.breakM {
+          width: auto;
+          font-size: 28px;
+        }
+        @include m.tablet {
+          font-size: 18px;
+        }
         @keyframes name {
           0%{
              opacity: 0;
@@ -60,6 +82,15 @@
         font-weight: 600;
         line-height: inherit;
         line-height: 1;
+        @include m.breakB {
+          font-size: 200px;
+        }
+        @include m.breakM {
+          font-size: 140px;
+        }
+        @include m.tablet {
+          font-size: 100px;
+        }
         span{
           display: block;
           letter-spacing: 0.02em;
@@ -87,6 +118,9 @@
             top: 50%;
             transform: translateY(-50%);
             animation: bar 1s 0.5s alternate forwards;
+            @include m.tablet {
+              height: 20px;
+            }
           }
           @keyframes bar {
             0%{
@@ -122,6 +156,10 @@
       display: flex;
       flex-direction: column;
       padding-left: 70px;
+      @include m.tablet {
+        padding-left: 0px;
+        padding-right: 40px;
+      }
       .top_box{
         flex: 2;
         display: flex;
@@ -129,6 +167,10 @@
         justify-content: space-between;
         padding-bottom: 50px;
         position: relative;
+        @include m.tablet{
+          padding-bottom: 0px;
+          justify-content: flex-start;
+        }
         &::after{
           content: '';
           position: absolute;
@@ -137,13 +179,21 @@
           bottom: 0;
           right: -90px;
           animation: bd02 1.2s 0.5s alternate forwards;
+          @include m.breakB {
+            right: -50px;
+          }
+          @include m.tablet {
+            right: -80px;
+            bottom: auto;
+            top: 70px;
+          }
         }
         @keyframes bd02 {
           0%{
             width: 0;
           }
           100%{
-            width: calc(100% + 350px);
+            width: calc(150%);
           }
         }
         &::before{
@@ -155,6 +205,10 @@
           left: -70px;
           opacity: 0;
           animation: box 0.5s 1s alternate forwards;
+          @include m.tablet {
+            left: auto;
+            right: -40px;
+          }
         }
         @keyframes box {
           0%{
@@ -179,20 +233,36 @@
               opacity: 1;
             }
           }
+          @include m.breakM {
+            font-size: 28px;
+          }
+          @include m.tablet {
+            font-size: 18px;
+            text-align: right;
+          }
         }
         .job{
           display: flex;
-          gap: 30%;
+          gap: 150px;
           font-size: 40px;
-          button{
+          @include m.breakB {
+            font-size: 32px;
+            gap: 100px;
+          }
+          @include m.tablet {
+            font-size: 20px;
+          }
+          span{
            opacity: 0;
-            animation: job 0.5s 1.2s forwards;
+            animation: job 0.7s 1.2s forwards;
             transform: translateY(70px);
             color: #fff;
+            @include m.tablet {
+              transform: translateY(30px);
+            }
             @keyframes job {
               0%{
                 opacity: 0;
-                transform: translateY(70px);
               }
               100%{
                 opacity: 1;
@@ -208,10 +278,8 @@
         .scroll{
             display: block;
             position: absolute;
-            z-index: 101;
-            transform: translateX(-50%);
             left: 0;
-            bottom: -50px;
+            bottom: 0;
             z-index: 11;
             text-align: center;
             font-size: 14px;
