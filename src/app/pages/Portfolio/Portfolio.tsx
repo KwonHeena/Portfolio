@@ -12,7 +12,11 @@ type Project = {
   img : string
 }
 
-const Portfolio = () => {
+type Props = {
+  portRef : React.RefObject<HTMLDivElement | null>
+}
+
+const Portfolio = ({portRef} : Props) => {
   const paginationRef = useRef<HTMLDivElement | null>(null)
   const proRef = useRef<(HTMLLIElement | null)[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
