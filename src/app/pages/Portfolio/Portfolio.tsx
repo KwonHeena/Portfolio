@@ -58,7 +58,7 @@ const Portfolio = ({portRef} : Props) => {
 }, [project])
 
   return (
-    <section className={styles.section03}>
+    <section className={styles.section03} ref={portRef}>
       <div className={styles.section_inner}>
         <div className={styles.past}>
           <p className={styles.title} style={{fontSize: 45, lineHeight: 1}}>Publishing</p>
@@ -259,7 +259,7 @@ const Portfolio = ({portRef} : Props) => {
             <ul className={styles.list}>
               {project.map((_, idx) => (
                 <li
-                  key={idx} ref={(el) => (proRef.current[idx] = el)} className={styles.pro}
+                  key={idx} ref={(el) => {proRef.current[idx] = el}} className={styles.pro}
                 >
                   <div className={styles.img_wrap}></div>
                   <div className={styles.txt_wrap}>내용 {idx + 1}</div>
