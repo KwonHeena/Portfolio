@@ -208,6 +208,7 @@
           @include m.tablet {
             left: auto;
             right: -40px;
+            top: 40px;
           }
         }
         @keyframes box {
@@ -235,6 +236,7 @@
           }
           @include m.breakM {
             font-size: 28px;
+            margin-bottom: 15px;
           }
           @include m.tablet {
             font-size: 18px;

@@ -1,4 +1,5 @@
 @use '../../styles/var' as *;
+@use '../../styles/mixin' as m;
 
 .section03{
     height: auto;
@@ -10,8 +11,11 @@
         font-weight: 600;
         max-width: 1400px;
         width: calc(100% - 40px);
-        margin: 0 auto 30px;
+        margin: 0 auto;
         color: $mainColor;
+        @include m.tablet{
+          font-size: 35px;
+        }
       }
     .past{
       position: sticky;
@@ -19,11 +23,18 @@
       height: 100vh;
       display: flex;
       flex-wrap: wrap;
+      gap: 40px;
+      align-items: baseline;
       height: 100vh;
       padding: 80px 0 60px;
       background: #f0f0f0;
+      @include m.tablet{
+        height: auto;
+        padding: 60px 0 60px;
+      }
       .slide_wrap{
         width: 100%;
+        text-align: center;
         .inner{
           display: inline-block;
           .img{
@@ -32,6 +43,9 @@
             overflow: hidden;
             position: relative;
             box-shadow: 5px 8px 15px rgba(0,0,0,0.2);
+            @include m.tablet{
+              max-width: 550px;
+            }
             .mark{
               position: absolute;
               top: 20px;
@@ -41,6 +55,10 @@
           }
           .info{
             padding: 40px 15px 0;
+            text-align: left;
+            @include m.mobile{
+              padding: 25px 15px 0;
+            }  
             & > div{
             display: flex;
             gap: 10px; 
@@ -49,15 +67,30 @@
                 font-size: 30px;
                 font-weight: 600;
                 margin-bottom: 15px;
+                @include m.breakM{
+                  font-size: 25px;
+                }
+                @include m.mobile{
+                  font-size: 20px;
+                }  
               }
           }
           .site_list{
             font-size: 19px;
+            @include m.tablet{
+              font-size: 17px;
+            }
+            @include m.mobile{
+              font-size: 14px;
+            }  
             & + .site_list{
               margin-top: 5px;
             }
             .tit{
               min-width: 92px;
+              @include m.mobile{
+                min-width: 63px;
+              } 
             }
           }
         }
@@ -68,11 +101,18 @@
         justify-content: center;
         gap: 10px;
         padding-top: 35px;
+        @include m.mobile{
+          gap: 5px;          
+        }
         span{
           background: $mainColor;
           width: 12px;
           height: 12px;
           cursor: pointer;
+          @include m.mobile{
+            width: 10px;
+            height: 10px;
+          }  
         }
       }
     }
@@ -87,8 +127,15 @@
         width: calc(100% - 40px);
         margin: 0 auto;
         .title{
+          width: 100%;
           position: sticky;
           top: 80px;
+           @include m.tablet{
+            font-size: 35px;
+          }
+           @include m.mobile{
+            position: static;
+           }
         }
         .num{
           width: 100px;
@@ -99,8 +146,17 @@
           font-size: 60px;
           font-weight: 600;
           position: sticky;
-          top: 150px;
-          padding-top: 30px;
+          top: 180px;
+          padding-top: 50px;
+          @include m.breakM{
+            width: 85px;
+            height: 85px;
+            line-height: 85px;
+            font-size: 45px;
+          }
+          @include m.mobile{
+            display: none;
+          }
           span {
             display: inline-block;
             animation: numFade 0.4s ease-out;
@@ -135,11 +191,203 @@
             transform: rotate(360deg);
           }
         }
-        .txt_wrap{
-          height: 600px;
-        }
         .list{
           padding-left: 260px;
+          @include m.breakM{
+            padding-left: 230px;
+          }
+          @include m.tablet{
+            padding-left: 200px;
+          }
+          @include m.mobile{
+            padding-left: 0;
+            padding-top: 40px;
+          }
+          li{
+            display: flex;
+            gap: 50px;
+            @include m.tablet{
+              gap: 30px;
+            }
+            @include m.mobile{
+              flex-direction: column;
+              gap: 20px;
+            }
+            & + li{
+              margin-top: 70px;
+              @include m.phone{
+                margin-top: 40px;
+              }
+            }
+            .img_wrap {
+              display: inline-block;
+              position: relative;
+              flex: 1;
+               width: 100%;
+               @include m.mobile{
+                  max-width: 400px;
+                  margin: 0 auto;
+                }
+              & > img{
+               width: 100%;
+              }
+              &::before{
+               content: '';
+               position: absolute;
+               width: 100%;
+               aspect-ratio: 400 / 250;
+               overflow: hidden;
+               background: url(/images/portfolio1.png) no-repeat;
+               background-position: top 15px center;
+               background-size: 400px;
+               z-index: -1;
+               border-radius: 10px;
+              }
+            }
+            &:nth-of-type(2) .img_wrap::before{
+              background-image: url(/images/portfolio2.png);
+            }
+            &:nth-of-type(3) .img_wrap::before{
+              background-image: url(/images/portfolio3.png);
+              background-size: contain;
+            }
+            &:nth-of-type(4) .img_wrap::before{
+              background-image: url(/images/portfolio4.png);
+              background-size: contain;
+            }
+            &:nth-of-type(5) .img_wrap::before{
+              background-image: url(/images/portfolio5.png);
+              background-size: contain;
+            }
+            &:nth-of-type(6) .img_wrap::before{
+              background-image: url(/images/portfolio6.png);
+              background-size: contain;
+              
+            }
+            .txt_wrap{
+              flex: 2;
+              margin-top: 5px;
+              position: relative;
+              padding-bottom: 50px;
+              .tit{
+                display: flex;
+                align-items: center;
+                font-size: 22px;
+                color: $mainColor;
+                font-weight: 500;
+                @include m.tablet{
+                    font-size: 18px;
+                }
+                @include m.phone{
+                  flex-direction: column;
+                  align-items: flex-start;
+                  font-size: 16px;
+                }
+                strong{
+                  font-size: 25px;
+                  @include m.tablet{
+                    font-size: 22px;
+                  }
+                  @include m.phone{
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                  }
+                  &::after{
+                    content: '';
+                    display: inline-block;
+                    width: 1.5px;
+                    height: 22px;
+                    background: $mainColor;
+                    margin: 0 10px -2px;
+                    @include m.phone{
+                      display: none;
+                    }
+                  }
+                }
+              }
+              .cont{
+                margin-top: 15px;
+                @include m.phone{
+                  margin-top: 8px;
+                }
+                .desc{
+                  font-size: 18px;
+                  line-height: 26px;
+                  letter-spacing: -0.01em;
+                  @include m.tablet{
+                    font-size: 17px;
+                    line-height: 24px;
+                  }
+                  @include m.phone{
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+                }
+                p{
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 15px;
+                  line-height: 25px;
+                  font-size: 17px;
+                  @include m.tablet{
+                    font-size: 16px;
+                  }
+                  @include m.phone{
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+                  span{
+                    font-weight: 600;
+                    flex-shrink: 0;
+                  }
+                  & + p{
+                    margin-top: 8px;
+                    @include m.phone{
+                      margin-top: 5px;
+                    }
+                  }
+                }
+              }
+              .link{
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                right: 20px;
+                min-width: 120px;
+                line-height: 40px;
+                background: $mainColor;
+                text-align: center;
+                border-radius: 10px;
+                color: #fff;
+                font-weight: 500;
+                transition: all 0.3s;
+                @include m.tablet{
+                  min-width: 90px;
+                  line-height: 35px;
+                  font-size: 15px;
+                  right: 0px;
+                }
+                @include m.phone{
+                  font-size: 14px;
+                }
+                .ico_hide{
+                  width: 0;
+                  transform: scale(0);
+                  transition: 0.3s;
+                  vertical-align: middle;
+                  margin-top: -1px;
+                }
+                &:hover{
+                  background: #d4a017;
+                  .ico_hide{
+                    width: 16px;
+                    transform: scale(1);
+                    margin-left: 5px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

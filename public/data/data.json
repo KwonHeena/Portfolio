@@ -1,22 +1,56 @@
 [
   {
-    "title": "프로젝트 1",
-    "desc": "내용 1",
-    "img": "/images/pro01.jpg"
+    "title": "다낭간다낭",
+    "sub" : "여행 정보 웹 서비스",
+    "desc": "여행을 테마로 기획부터 디자인, 퍼블리싱, 기능 구현까지 단독으로 진행한 개인 프로젝트로, 공공 API를 활용해 여행 정보를 제공하는 반응형 웹 사이트",
+    "period": "7일",
+    "people": "1명",
+    "stack": "HTML5, CSS3, JavaScript, Open API 연동, JSON 데이터 처리, GitHub 배포",
+    "link": "https://kwonheena.github.io/DanangGandanang/"
   },
   {
-    "title": "프로젝트 2",
-    "desc": "내용 2",
-    "img": "/images/pro02.jpg"
+    "title": "계룡시 문화관광",
+    "sub" : "웹사이트 리뉴얼",
+    "desc": "계룡시 문화관광 사이트 리뉴얼 팀 프로젝트로, 헤더·푸터 및 서브 페이지 공통 레이아웃 구축과 소개 페이지 퍼블리싱을 담당하여 일관된 UI 구조를 구현",
+    "period": "3주",
+    "people": "4명",
+    "stack": "HTML5, CSS3, JavaScript, Open API 연동, 반응형 웹, GitHub 협업",
+    "link": "https://minshork.github.io/lineup-project/"
   },
   {
-    "title": "프로젝트 3",
-    "desc": "내용 3",
-    "img": "/images/pro03.jpg"
+    "title": "학생 출결 관리 프로그램",
+    "sub" : "풀스택 웹 애플리케이션",
+    "desc": "Cursor AI를 활용한 바이브 코딩 방식으로 개발한 풀스택 웹 애플리케이션으로, 학원의 출결 데이터를 효율적으로 관리할 수 있는 인증·출결 관리 기능 구현",
+    "period": "5일",
+    "people": "2명",
+    "stack": "React, TypeScript, Vite, SASS, Node.js, Express, Prisma ORM, PostgreSQL, Netlify 배포",
+    "link": "https://academy-attendance.netlify.app/login"
   },
   {
-    "title": "프로젝트 4",
-    "desc": "내용 4",
-    "img": "/images/pro04.jpg"
+    "title": "React Todo List",
+    "sub" : "상태 관리 실습",
+    "desc": "React의 상태 관리와 컴포넌트 구조 이해를 목표로 제작한 투두 리스트 웹 애플리케이션으로, CRUD 기능을 통해 기본적인 데이터 흐름을 학습",
+    "period": "5일",
+    "people": "1명",
+    "stack": "React, Vite, SASS, 컴포넌트 분리, 상태 관리",
+    "link": "https://react-todo-git.netlify.app/"
+  },
+  {
+    "title": "React Native Todo List",
+    "sub" : "모바일 앱",
+    "desc": "React Native를 활용해 모바일 환경에서 동작하는 투두 리스트 애플리케이션으로, 웹과 모바일 환경의 차이를 이해하기 위해 제작",
+    "period": "5일",
+    "people": "1명",
+    "stack": "React Native, SASS, 모바일 UI 구성, 상태 관리",
+    "link": "https://todo-mo.vercel.app/"
+  },
+  {
+    "title": "방명록",
+    "sub" : "GCP 기반 웹 서비스",
+    "desc": "GCP 환경에서 서버를 구축하고 배포한 방명록 웹 애플리케이션으로, 서버-DB 연동 및 기본적인 백엔드 흐름을 경험한 프로젝트",
+    "period": "5일",
+    "people": "1명",
+    "stack": "HTML, CSS, GCP, Node.js, Express, MySQL, 서버 배포",
+    "link": "https://note-939820282611.us-central1.run.app/"
   }
 ]

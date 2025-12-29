@@ -5,11 +5,16 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/pagination'
 import styles from './Portfolio.module.scss'
+import { FaArrowRight } from "react-icons/fa6";
 
 type Project = {
   title : string,
+  sub : string,
   desc : string,
-  img : string
+  period : string,
+  people : string
+  stack : string
+  link : string
 }
 
 type Props = {
@@ -23,10 +28,13 @@ const Portfolio = ({portRef} : Props) => {
   const [project, setProject] = useState<Project[]>([])
 
   // 포트폴리오 json 불러오기
+  const fetchData = async () => {
+    const res = await fetch('/data/data.json')
+    const data = await res.json()
+    setProject(data)
+  }
   useEffect(() => {
-    fetch('/data/data.json')
-    .then((res) => res.json())
-    .then((data) => setProject(data))
+    fetchData()
   }, [])
 
   useEffect(() => {
@@ -46,7 +54,7 @@ const Portfolio = ({portRef} : Props) => {
       })
     },
     {
-      threshold: 0.8,
+      threshold: 1
     }
   )
 
@@ -61,7 +69,7 @@ const Portfolio = ({portRef} : Props) => {
     <section className={styles.section03} ref={portRef}>
       <div className={styles.section_inner}>
         <div className={styles.past}>
-          <p className={styles.title} style={{fontSize: 45, lineHeight: 1}}>Publishing</p>
+          <p className={styles.title}>Publishing</p>
           <div className={styles.slide_wrap}>
             <Swiper
               modules={[Pagination]}
@@ -72,9 +80,23 @@ const Portfolio = ({portRef} : Props) => {
 
               slidesPerView={2.5}
               centeredSlides={true}
+              centeredSlidesBounds={true}
               spaceBetween={30}
               grabCursor={true}
               loop
+              breakpoints={{
+              0: {
+                slidesPerView: 1.1,
+              },
+              768: {
+                slidesPerView: 1.7,
+                spaceBetween: 5,
+              },
+              1200: {
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+            }}
           >
             <SwiperSlide>
               <a href='https://www.fiti.re.kr/web/main/index.do' target='_blank' className={styles.inner}>
@@ -250,19 +272,30 @@ const Portfolio = ({portRef} : Props) => {
         </div>
         <div className={styles.current}>
           <div className={styles.wd_inner}>
-            <p className={styles.title} style={{fontSize: 45, lineHeight: 1}}>FrontEnd</p>
+            <p className={styles.title}>FrontEnd</p>
               <div className={styles.num}>
                 <span key={activeIndex}>
                   {activeIndex + 1}
                 </span>
               </div>
             <ul className={styles.list}>
-              {project.map((_, idx) => (
+              {project.map((item, idx) => (
                 <li
                   key={idx} ref={(el) => {proRef.current[idx] = el}} className={styles.pro}
                 >
-                  <div className={styles.img_wrap}></div>
-                  <div className={styles.txt_wrap}>내용 {idx + 1}</div>
+                  <div className={styles.img_wrap}>
+                    <img src="/images/ico_mockup.png" alt="목업이미지" />
+                  </div>
+                  <div className={styles.txt_wrap}>
+                    <p className={styles.tit}><strong>{item.title}</strong>{item.sub}</p>
+                    <div className={styles.cont}>
+                      <p className={styles.desc}>{item.desc}</p>
+                      <p><span>작업기간</span>{item.period}</p>
+                      <p><span>작업인원</span>{item.people}</p>
+                      <p><span>사용기술</span>{item.stack}</p>
+                    </div>
+                    <a target="_blank" href={item.link} className={styles.link}>바로가기<FaArrowRight className={styles.ico_hide} /></a>
+                  </div>
                 </li>
               ))}
             </ul>
