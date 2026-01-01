@@ -2,7 +2,7 @@
 @use '../../styles/mixin' as m;
 
 .section03{
-    height: auto;
+    position: relative;
   .section_inner{
     position: relative;
       .title{
@@ -20,7 +20,7 @@
     .past{
       position: sticky;
       top: 0;
-      height: 100vh;
+      height: 100%;
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
@@ -118,7 +118,7 @@
       }
     }
     .current{
-      position: sticky;
+      position: relative;
       top: 0;
       min-height: 100vh;
       background: #e0ebe8;
@@ -224,6 +224,7 @@
               display: inline-block;
               position: relative;
               flex: 1;
+              z-index: 10;
                width: 100%;
                @include m.mobile{
                   max-width: 400px;
@@ -236,12 +237,12 @@
                content: '';
                position: absolute;
                width: 100%;
+               z-index: -1;
                aspect-ratio: 400 / 250;
                overflow: hidden;
                background: url(/images/portfolio1.png) no-repeat;
                background-position: top 15px center;
                background-size: 400px;
-               z-index: -1;
                border-radius: 10px;
               }
             }
