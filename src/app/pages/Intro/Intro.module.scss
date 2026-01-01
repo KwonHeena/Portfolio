@@ -7,6 +7,12 @@
   @include m.tablet{
     height: auto;
   }
+  .mobile{
+    display: none;
+    @include m.phone{
+      display: block;
+    }
+  }
   .section_inner{
     max-width: 1400px;
     width: calc(100% - 40px);
@@ -19,6 +25,7 @@
       .name_wrap{
         color: $mainColor;
         flex-shrink: 0;
+        overflow: hidden;
         strong{
           display: block;
           font-size: 45px;
@@ -75,6 +82,9 @@
             }
             @include m.tablet{
               font-size: 24px;
+            }
+            @include m.phone{
+              line-height: 40px;
             }
             .icon{
               font-size: 22px;

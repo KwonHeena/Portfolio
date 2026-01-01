@@ -88,6 +88,7 @@
             }
             .tit{
               min-width: 92px;
+              flex-shrink: 0;
               @include m.mobile{
                 min-width: 63px;
               } 
