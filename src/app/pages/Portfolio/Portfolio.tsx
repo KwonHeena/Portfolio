@@ -284,7 +284,9 @@ const Portfolio = ({portRef} : Props) => {
                   key={idx} ref={(el) => {proRef.current[idx] = el}} className={styles.pro}
                 >
                   <div className={styles.img_wrap}>
-                    <img src="/images/ico_mockup.png" alt="목업이미지" />
+                    {
+                      <img src={`/images/portfolio0${idx + 1}.png`} />
+                    }
                   </div>
                   <div className={styles.txt_wrap}>
                     <p className={styles.tit}><strong>{item.title}</strong>{item.sub}</p>

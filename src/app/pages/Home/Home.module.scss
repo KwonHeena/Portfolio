@@ -50,7 +50,8 @@
           }
         }
         @include m.tablet{
-          gap: 60px;
+          gap: 40%;
+          justify-content: flex-start;
         }
       .name{
         display: inline-block;
