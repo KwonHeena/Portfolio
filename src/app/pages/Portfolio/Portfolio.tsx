@@ -5,7 +5,7 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css';
 import 'swiper/css/pagination'
 import styles from './Portfolio.module.scss'
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaXmark } from "react-icons/fa6";
 
 type Project = {
   title : string,
@@ -26,6 +26,7 @@ const Portfolio = ({portRef} : Props) => {
   const proRef = useRef<(HTMLLIElement | null)[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
   const [project, setProject] = useState<Project[]>([])
+  const [showVideo, setShowVideo] = useState(false)
 
   // 포트폴리오 json 불러오기
   const fetchData = async () => {
@@ -64,6 +65,20 @@ const Portfolio = ({portRef} : Props) => {
 
   return () => observer.disconnect()
 }, [project])
+
+  // 비디오 팝업 켜질 때 body 스타일 추가
+  useEffect(() => {
+    if(showVideo) {
+      document.body.style.overflow = 'hidden'
+    }
+    else{
+      document.body.style.overflow = ''
+    }
+  }, [showVideo])
+
+  const popClose = () => {
+    setShowVideo(false)
+  }
 
   return (
     <section className={styles.section03} ref={portRef}>
@@ -280,9 +295,7 @@ const Portfolio = ({portRef} : Props) => {
               </div>
             <ul className={styles.list}>
               {project.map((item, idx) => (
-                <li
-                  key={idx} ref={(el) => {proRef.current[idx] = el}} className={styles.pro}
-                >
+                <li key={idx} ref={(el) => {proRef.current[idx] = el}} className={styles.pro}>
                   <div className={styles.img_wrap}>
                     {
                       <img src={`/images/portfolio0${idx + 1}.png`} />
@@ -296,11 +309,31 @@ const Portfolio = ({portRef} : Props) => {
                       <p><span>작업인원</span>{item.people}</p>
                       <p><span>사용기술</span>{item.stack}</p>
                     </div>
-                    <a target="_blank" href={item.link} className={styles.link}>바로가기<FaArrowRight className={styles.ico_hide} /></a>
+                    <div className={styles.btn_wrap}>
+                      {
+                        item.title === '학생 출결 관리 프로그램' && (
+                          <div>
+                            <button className={styles.open} onClick={() => setShowVideo(true)}>동영상 보기<FaArrowRight className={styles.ico_hide} /></button>
+                          </div>
+                        )
+                      }
+                      
+                      <a target="_blank" href={item.link} className={styles.link}>바로가기<FaArrowRight className={styles.ico_hide} /></a>
+                    </div>
                   </div>
                 </li>
               ))}
             </ul>
+              {
+                showVideo === true && (
+                  <div className={styles.videoOpen_wrap}>
+                    <div className={styles.video_inner}>
+                      <video src="/videos/video01.mp4" autoPlay muted loop></video>
+                    </div>
+                    <button className={styles.popClose} onClick={popClose}><FaXmark /></button>
+                  </div>
+                )
+              }
           </div>
         </div>
       </div>
